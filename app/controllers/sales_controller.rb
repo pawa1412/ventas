@@ -16,6 +16,8 @@ class SalesController < ApplicationController
   def new
     @sale = Sale.new
     @sale.invoices.build
+    #@sale.client.build
+    @client = @sale.build_client
     @invoice = Invoice.new
     @invoice.products.build
   end
@@ -27,7 +29,28 @@ class SalesController < ApplicationController
   # POST /sales
   # POST /sales.json
   def create
+    byebug
+    @client = Client.create(rut: params["sale"]["clients"]["rut"],
+                            unidad_compra: params["sale"]["clients"]["unidad_compra"],
+                            razon: params["sale"]["clients"]["razon"],
+                            direccion: params["sale"]["clients"]["direccion"],
+                            comuna: params["sale"]["clients"]["comuna"],
+                            region: params["sale"]["clients"]["region"],
+                            institucion: params["sale"]["clients"]["institucion"])
+    sale_params["client_id"] = @client.id
+
+    @invoice = Invoice.create(fecha_despacho: params["sale"]["invoices_attributes"]["fecha_despacho"],
+                           orden_transporte: params["sale"]["invoices_attributes"]["orden_transporte"],
+                           empresa: params["sale"]["invoices_attributes"]["empresa"],
+                           numero_factura: params["sale"]["invoices_attributes"]["numero_factura"],
+                           products_attributes: Product.attribute_names.map(&:to_sym))
+    params["sale"]["invoices_attributes"]["sale_id"] = @sale.id
+    product_models.each do |ii|
+      @invoice.products << ii
+    end
+
     @sale = Sale.new(sale_params)
+
 
     respond_to do |format|
       if @sale.save
@@ -72,6 +95,6 @@ class SalesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def sale_params
-      params.require(:sale).permit(:client_id, :codigo_oc, :numero_licitacion, :fecha_envio, :estado, :moneda, :total, :forma_pago)
+      params.require(:sale).permit(:client_id, :codigo_oc, :numero_licitacion, :fecha_envio, :estado, :moneda, :total, :forma_pago, clients_attributes: Client.attribute_names.map(&:to_sym),invoices_attributes: Invoice.attribute_names.map(&:to_sym))
     end
 end

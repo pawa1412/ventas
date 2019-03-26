@@ -51,6 +51,14 @@
     <%= f.text_field :forma_pago %>
   </div>
 
+  <%= f.fields_for :clients do |client| %>
+    <% render 'client_fields', form: client %>
+  <% end %>
+
+  <%= f.fields_for :invoices do |invoice| %>
+    <% render 'invoice_fields', form: invoice %>
+  <% end %>
+
 
   <div class="actions">
     <%= f.submit %>

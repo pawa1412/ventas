@@ -1,25 +1,47 @@
 
   <div class="field">
-    <%= inv.label :sale_id %>
-    <%= inv.text_field :sale_id %>
+    <%= form.label :sale_id %>
+    <%= form.text_field :sale_id %>
   </div>
 
   <div class="field">
-    <%= inv.label :fecha_despacho %>
-    <%= inv.date_select :fecha_despacho %>
+    <%= form.label :fecha_despacho %>
+    <%= form.date_select :fecha_despacho %>
   </div>
 
   <div class="field">
-    <%= inv.label :orden_transporte %>
-    <%= inv.text_field :orden_transporte %>
+    <%= form.label :orden_transporte %>
+    <%= form.text_field :orden_transporte %>
   </div>
 
   <div class="field">
-    <%= inv.label :empresa %>
-    <%= inv.text_field :empresa %>
+    <%= form.label :empresa %>
+    <%= form.text_field :empresa %>
   </div>
 
   <div class="field">
-    <%= inv.label :numero_factura %>
-    <%= inv.number_field :numero_factura %>
+    <%= form.label :numero_factura %>
+    <%= form.number_field :numero_factura %>
+  </div>
+
+  <table class='table'>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Tipo</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Precio</th>
+        <th>Número de Producto</th>
+      </tr>
+    </thead>
+    <tbody class='fields'>
+      <%= form.fields_for :products do |f| %>
+        <%= render 'product_fields', f: f%>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="actions">
+    <%= link_to_add_fields('Add Task', form, :products) %>
   </div>
