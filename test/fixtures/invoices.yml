@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sale: one
+  fecha_despacho: 2019-03-24
+  orden_transporte: MyString
+  empresa: MyString
+  numero_factura: 1
+
+two:
+  sale: two
+  fecha_despacho: 2019-03-24
+  orden_transporte: MyString
+  empresa: MyString
+  numero_factura: 1

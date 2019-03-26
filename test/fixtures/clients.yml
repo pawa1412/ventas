@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rut: MyString
+  unidad_compra: MyString
+  razon: MyString
+  direccion: MyString
+  comuna: MyString
+  region: MyString
+  institucion: MyString
+
+two:
+  rut: MyString
+  unidad_compra: MyString
+  razon: MyString
+  direccion: MyString
+  comuna: MyString
+  region: MyString
+  institucion: MyString

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Rut:</strong>
+  <%= @client.rut %>
+</p>
+
+<p>
+  <strong>Unidad compra:</strong>
+  <%= @client.unidad_compra %>
+</p>
+
+<p>
+  <strong>Razon:</strong>
+  <%= @client.razon %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @client.direccion %>
+</p>
+
+<p>
+  <strong>Comuna:</strong>
+  <%= @client.comuna %>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @client.region %>
+</p>
+
+<p>
+  <strong>Institucion:</strong>
+  <%= @client.institucion %>
+</p>
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>

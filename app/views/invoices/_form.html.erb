@@ -1,0 +1,63 @@
+<%= form_for(@invoice) do |form| %>
+  <% if invoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+      <ul>
+      <% invoice.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sale_id %>
+    <%= form.text_field :sale_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fecha_despacho %>
+    <%= form.date_select :fecha_despacho %>
+  </div>
+
+  <div class="field">
+    <%= form.label :orden_transporte %>
+    <%= form.text_field :orden_transporte %>
+  </div>
+
+  <div class="field">
+    <%= form.label :empresa %>
+    <%= form.text_field :empresa %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numero_factura %>
+    <%= form.number_field :numero_factura %>
+  </div>
+
+
+
+  <table class='table'>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Tipo</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Precio</th>
+        <th>Número de Producto</th>
+      </tr>
+    </thead>
+    <tbody class='fields'>
+      <%= form.fields_for :products do |f| %>
+        <%= render 'product_fields', f: f%>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="actions">
+    <%= link_to_add_fields('Add Task', form, :products) %>
+    <%= form.submit %>
+  </div>
+<% end %>

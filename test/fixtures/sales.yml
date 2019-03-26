@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: one
+  codigo_oc: MyString
+  numero_licitacion: 1
+  fecha_envio: 2019-03-24
+  estado: MyString
+  moneda: MyString
+  total: 1
+  forma_pago: MyString
+
+two:
+  client: two
+  codigo_oc: MyString
+  numero_licitacion: 1
+  fecha_envio: 2019-03-24
+  estado: MyString
+  moneda: MyString
+  total: 1
+  forma_pago: MyString

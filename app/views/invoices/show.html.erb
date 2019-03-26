@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Sale:</strong>
+  <%= @invoice.sale %>
+</p>
+
+<p>
+  <strong>Fecha despacho:</strong>
+  <%= @invoice.fecha_despacho %>
+</p>
+
+<p>
+  <strong>Orden transporte:</strong>
+  <%= @invoice.orden_transporte %>
+</p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @invoice.empresa %>
+</p>
+
+<p>
+  <strong>Numero factura:</strong>
+  <%= @invoice.numero_factura %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>

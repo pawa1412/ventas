@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @sale.client %>
+</p>
+
+<p>
+  <strong>Codigo oc:</strong>
+  <%= @sale.codigo_oc %>
+</p>
+
+<p>
+  <strong>Numero licitacion:</strong>
+  <%= @sale.numero_licitacion %>
+</p>
+
+<p>
+  <strong>Fecha envio:</strong>
+  <%= @sale.fecha_envio %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @sale.estado %>
+</p>
+
+<p>
+  <strong>Moneda:</strong>
+  <%= @sale.moneda %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @sale.total %>
+</p>
+
+<p>
+  <strong>Forma pago:</strong>
+  <%= @sale.forma_pago %>
+</p>
+
+<%= link_to 'Edit', edit_sale_path(@sale) %> |
+<%= link_to 'Back', sales_path %>
