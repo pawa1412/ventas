@@ -29,7 +29,6 @@ class SalesController < ApplicationController
   # POST /sales
   # POST /sales.json
   def create
-    byebug
     @client = Client.create(rut: params["sale"]["clients"]["rut"],
                             unidad_compra: params["sale"]["clients"]["unidad_compra"],
                             razon: params["sale"]["clients"]["razon"],
@@ -38,7 +37,7 @@ class SalesController < ApplicationController
                             region: params["sale"]["clients"]["region"],
                             institucion: params["sale"]["clients"]["institucion"])
     sale_params["client_id"] = @client.id
-
+    byebug
     @invoice = Invoice.create(fecha_despacho: params["sale"]["invoices_attributes"]["fecha_despacho"],
                            orden_transporte: params["sale"]["invoices_attributes"]["orden_transporte"],
                            empresa: params["sale"]["invoices_attributes"]["empresa"],
