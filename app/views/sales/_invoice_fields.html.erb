@@ -1,28 +1,42 @@
-
-  <div class="field">
-    <%= form.label :sale_id %>
-    <%= form.text_field :sale_id %>
+<div class="row">
+  <div class="col-3">
+    <div class="form-group">
+      <label for="sale_id">sale</label>
+      <input type="sale_id" class="form-control">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :fecha_despacho %>
-    <%= form.date_select :fecha_despacho %>
+  <div class="col-3">
+    <div class="form-group">
+      <label for="fecha_despacho"> Fecha de Despacho</label>
+      <input type="date" class="form-control">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :orden_transporte %>
-    <%= form.text_field :orden_transporte %>
+  <div class="col-sm-3">
+    <div class="field">
+      <label for="orden_transporte"> Orden de Transporte</label>
+      <input type="text" class="form-control">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <div class="form-group">
+      <label for="empresa">empresa</label>
+      <input type="text" class="form-control">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :empresa %>
-    <%= form.text_field :empresa %>
+  <div class="col-3">
+    <div class="form-group">
+      <label for="numero_factura"> Numero de Factura</label>
+      <input type="number" class="form-control">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :numero_factura %>
-    <%= form.number_field :numero_factura %>
-  </div>
+</div>
 
   <table class='table'>
     <thead>

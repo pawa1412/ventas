@@ -1,34 +1,54 @@
-  <div class="field">
-    <%= form.label :rut %>
-    <%= form.text_field :rut %>
+<div class="row">
+  <div class="col-3">
+    <div class="form-group">
+      <label for="rut">RUT</label>
+      <input type="rut" class="form-control">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :unidad_compra %>
-    <%= form.text_field :unidad_compra %>
+  <div class="col-3">
+    <div class="form-group">
+      <label for="unidad_compra"> Unidad de Compra</label>
+      <input type="unidad_compra" class="form-control">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :razon %>
-    <%= form.text_field :razon %>
+  <div class="col-sm-3">
+    <div class="field">
+      <label for="razon"> Razón</label>
+      <input type="text" class="form-control">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-3">
+    <div class="form-group">
+      <label for="direccion">Dirección</label>
+      <input type="direccion" class="form-control">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :direccion %>
-    <%= form.text_field :direccion %>
+  <div class="col-3">
+    <div class="form-group">
+      <label for="comuna"> Comuna</label>
+      <input type="comuna" class="form-control">
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :comuna %>
-    <%= form.text_field :comuna %>
+  <div class="col-sm-3">
+    <div class="field">
+      <label for="region"> Región</label>
+      <input type="region" class="form-control">
+    </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :region %>
-    <%= form.text_field :region %>
+<div class="row">
+  <div class="col-3">
+    <div class="form-group">
+      <label for="institucion">Institución</label>
+      <input type="text" class="form-control">
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :institucion %>
-    <%= form.text_field :institucion %>
-  </div>
+</div>

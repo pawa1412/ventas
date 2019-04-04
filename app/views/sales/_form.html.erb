@@ -11,46 +11,78 @@
     </div>
   <% end %>
 
-  <div class="form-inline">
-    <label for="client_id">ID Cliente</label>
-    <input type="client_id" class="form-control">
+
+  <div class="row">
+    <div class="col-3">
+      <div class="form-group">
+        <div class="form-group">
+          <label for="codigo_oc"> Código OC</label>
+          <input type="codigo_oc" class="form-control">
+        </div>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="field">
+        <label for="numero_licitacion"> Numero de Licitacion</label>
+        <input type="number" class="form-control">
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="field">
+        <label for="fecha_envio"> Fecha de Envio</label>
+        <input type="date" class="form-control">
+      </div>
+    </div>
   </div>
 
-  <div class="form-inline">
-    <label for="codigo_oc"> Código OC</label>
-    <input type="codigo_oc" class="form-control">
+
+  <div class="row">
+    <div class="col-3">
+      <label for="estado">Estado</label>
+      <select class="form-control" id="estado">
+        <option>Pagada</option>
+        <option>Pendiente</option>
+        <option>Deuda</option>
+      </select>
+    </div>
+
+    <div class="col-2">
+      <label for="moneda">Moneda</label>
+      <select class="form-control" id="moneda">
+        <option>CLP</option>
+        <option>UF</option>
+        <option>US</option>
+      </select>
+    </div>
+
+    <div class="col-2">
+      <div class="field">
+        <label for="total"> Total </label>
+        <input type="number" class="form-control">
+      </div>
+    </div>
+
+    <div class="col-2">
+      <label for="forma_pago">Forma de Pago</label>
+      <select class="form-control" id="forma_pago">
+        <option>A 30 dias</option>
+        <option>Más de 30 dias</option>
+      </select>
+    </div>
   </div>
 
+  <div class="row">
 
-  <div class="field">
-    <%= f.label :numero_licitacion %>
-    <%= f.number_field :numero_licitacion %>
+
+    <div class="col-3">
+      <label for="client_id">ID Cliente</label>
+      <input type="client_id" class="form-control">
+    </div>
+
   </div>
 
-  <div class="field">
-    <%= f.label :fecha_envio %>
-    <%= f.date_select :fecha_envio %>
-  </div>
-
-  <div class="field">
-    <%= f.label :estado %>
-    <%= f.text_field :estado %>
-  </div>
-
-  <div class="field">
-    <%= f.label :moneda %>
-    <%= f.text_field :moneda %>
-  </div>
-
-  <div class="field">
-    <%= f.label :total %>
-    <%= f.number_field :total %>
-  </div>
-
-  <div class="field">
-    <%= f.label :forma_pago %>
-    <%= f.text_field :forma_pago %>
-  </div>
 
   <%= f.fields_for :clients do |client| %>
     <% render 'client_fields', form: client %>
