@@ -25,6 +25,7 @@ class InvoicesController < ApplicationController
   # POST /invoices
   # POST /invoices.json
   def create
+
     product_models = []
     params["invoice"]["products_attributes"].each {|key, value|
       object = Product.new

@@ -11,15 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :client_id %>
-    <%= f.text_field :client_id %>
+  <div class="form-inline">
+    <label for="client_id">ID Cliente</label>
+    <input type="client_id" class="form-control">
   </div>
 
-  <div class="field">
-    <%= f.label :codigo_oc %>
-    <%= f.text_field :codigo_oc %>
+  <div class="form-inline">
+    <label for="codigo_oc"> Código OC</label>
+    <input type="codigo_oc" class="form-control">
   </div>
+
 
   <div class="field">
     <%= f.label :numero_licitacion %>
@@ -50,6 +51,14 @@
     <%= f.label :forma_pago %>
     <%= f.text_field :forma_pago %>
   </div>
+
+  <%= f.fields_for :clients do |client| %>
+    <% render 'client_fields', form: client %>
+  <% end %>
+
+  <%= f.fields_for :invoices do |invoice| %>
+    <% render 'invoice_fields', form: invoice %>
+  <% end %>
 
 
   <div class="actions">
